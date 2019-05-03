@@ -1,0 +1,148 @@
+<html lang="en-US">
+	<head>
+	<title> The Division 2 | Builder </title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<h1> It's a builder </h1>
+		<div>
+		<form action="">
+			<select name="type_w">
+				<option value="null" selected> --- </option>
+				<option value="assault"> Assault Rifle </option>				
+				<option value="lmg"> LMG </option>
+				<option value="marks"> Marksman Rifle </option>
+				<option value="smg"> SMG </option>
+				<option value="sniper"> Sniper Rifle </option>
+				<option value="shotgun"> Shotgun </option>		
+			</select>
+			<br><br>
+			<!--TODO: il successivo form deve prendere in considerazione il "type_w" per
+				mostrare la tipologia giusta dell'arma che l'utente intende selezionare-->
+			<select id="w_assault" name="" hidden>
+				<option value="null" selected> --- </option>
+				<option value="akm"> AK-M Military </option>		
+			</select>
+
+			<select id="w_lmg" name="" hidden>
+				<option value="null" selected> --- </option>
+				<option value="mg5"> MG5 </option>		
+			</select>
+
+			<select id="w_marks" name="" hidden>
+				<option value="null" selected> --- </option>
+				<option value="mk17"> MK17 Military </option>		
+			</select>
+
+			<select id="w_smg" name="" hidden>
+				<option value="null" selected> --- </option>
+				<option value="mp7"> MP7 </option>		
+			</select>
+
+			<select id="w_sniper" name="" hidden>
+				<option value="null" selected> --- </option>
+				<option value="m700"> M700 </option>		
+			</select>
+
+			<select id="w_shotgun" name="" hidden>
+				<option value="null" selected> --- </option>
+				<option value="spas12"> SPAS-12 </option>		
+			</select>
+		</form>
+		</div>
+        <button onclick="selectWeapon()">Click me</button>
+		<div id="stats">
+			<table id="table_stat_damage">
+			<tr>
+				<th>DPS</th>
+				<th>Crit. Chance</th>
+				<th>Crit. Damage</th>
+				<th>Damage to Elites</th>
+				<th>Bonus Damage</th>
+				<th>Bonus Type Damage</th>
+				<th>Accuracy</th>
+				<th>Stability</th>
+				<th>Handiness</th>
+			</tr>
+				<tr>
+				<td>11500</td>
+				<td>17%</td>
+				<td>56%</td>
+				<td>10%</td>
+				<td> - </td>
+				<td> - </td>
+				<td> - </td>
+				<td> - </td>
+				<td> - </td>
+			</tr>
+			</table>
+		</div>
+		<div>
+		</div>
+<script>
+	document.addEventlistener("change", function(){
+		var selectedType = document.getElementById("type_w").value;
+		switch(selectedType) 
+		{
+  			case assault:
+    				ishide1.style.display = "block";
+    				break;
+			case lmg:
+    				ishide2.style.display = "block";
+    				break;
+			case marks:
+    				ishide3.style.display = "block";
+    				break;
+			case smg:
+    				ishide4.style.display = "block";
+    				break;
+			case sniper:
+    				ishide5.style.display = "block";
+    				break;
+			case shotgun:
+    				ishide6.style.display = "block";
+    				break;
+  			default:
+    				// code block
+		}
+		
+	});
+
+
+	function selectWeapon()
+	{
+		var select = document.getElementById("type_w").value;
+		var ishide1 = document.getElementById("w_assault");
+		var ishide2 = document.getElementById("w_lmg");
+		var ishide3 = document.getElementById("w_marks");
+		var ishide4 = document.getElementById("w_smg");
+		var ishide5 = document.getElementById("w_sniper");
+		var ishide6 = document.getElementById("W_shotgun");
+		
+		switch(select) 
+		{
+  			case assault:
+    				ishide1.style.display = "block";
+    				break;
+			case lmg:
+    				ishide2.style.display = "block";
+    				break;
+			case marks:
+    				ishide3.style.display = "block";
+    				break;
+			case smg:
+    				ishide4.style.display = "block";
+    				break;
+			case sniper:
+    				ishide5.style.display = "block";
+    				break;
+			case shotgun:
+    				ishide6.style.display = "block";
+    				break;
+  			default:
+    				// code block
+		}
+	}
+	</script>
+	</body>
+</html>
